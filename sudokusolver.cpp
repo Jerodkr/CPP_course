@@ -3,6 +3,40 @@
 using namespace std;
 
 void printgrid(int arr[N][N]);
+bool isSafe(int grid[N][N], int row, int col, int num);
+bool solveSudoku(int grid[N][N], int row, int col);
+
+int main() {
+
+    int grid[N][N] = {{7, 0, 1, 0, 0, 3, 6, 0, 0},
+                      {0, 6, 8, 0, 1, 5, 0, 0, 3},
+                      {3, 2, 0, 0, 0, 7, 0, 0, 0},
+                      {0, 5, 0, 0, 0, 0, 0, 0, 0},
+                      {0, 0, 0, 0, 0, 0, 0, 0, 8},
+                      {0, 0, 0, 0, 0, 0, 9, 0, 0},
+                      {0, 1, 0, 0, 7, 9, 0, 2, 0},
+                      {4, 0, 0, 6, 2, 0, 7, 5, 0},
+                      {0, 7, 0, 0, 5, 0, 8, 0, 0}};
+   
+
+ if (solveSudoku(grid, 0, 0))
+     printgrid(grid);
+ else
+        cout << "no solution  exists " << "\n";
+ 
+    return 0;
+
+ return 0;
+} 
+void printgrid(int arr[N][N])
+{
+    for (int i = 0; i < N; i++)
+    {
+        for (int j = 0; j < N; j++)
+            cout << arr[i][j] << " ";
+        cout << endl;
+    }
+}
 
 bool isSafe(int grid[N][N], int row,
                        int col, int num) {
@@ -26,7 +60,7 @@ bool isSafe(int grid[N][N], int row,
  
     return true;
 }
- 
+
 bool solveSudoku(int grid[N][N], int row, int col)
 {
        if (row == N - 1 && col == N)
@@ -61,41 +95,6 @@ bool solveSudoku(int grid[N][N], int row, int col)
     }
     return false;
 }
-
-int main() {
-
-    int grid[N][N] = {{7, 0, 1, 0, 0, 3, 6, 0, 0},
-                      {0, 6, 8, 0, 1, 5, 0, 0, 3},
-                      {3, 2, 0, 0, 0, 7, 0, 0, 0},
-                      {0, 5, 0, 0, 0, 0, 0, 0, 0},
-                      {0, 0, 0, 0, 0, 0, 0, 0, 8},
-                      {0, 0, 0, 0, 0, 0, 9, 0, 0},
-                      {0, 1, 0, 0, 7, 9, 0, 2, 0},
-                      {4, 0, 0, 6, 2, 0, 7, 5, 0},
-                      {0, 7, 0, 0, 5, 0, 8, 0, 0}};
-   
-
- if (solveSudoku(grid, 0, 0))
-     printgrid(grid);
- else
-        cout << "no solution  exists " << "\n";
- 
-    return 0;
-
- return 0;
-} 
-void printgrid(int arr[N][N])
-{
-    for (int i = 0; i < N; i++)
-    {
-        for (int j = 0; j < N; j++)
-            cout << arr[i][j] << " ";
-        cout << endl;
-    }
-}
-
-
-
 
 
     
