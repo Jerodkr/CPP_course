@@ -8,11 +8,11 @@ int main(){
                             "4. Wanneer heb ik mijn enkel gebroken?: ",
                             "5. Hoe oud wordt Erwin?: "};
 
-    std::string keuzes[][4] = {{"A. Hond", "B. Rat", "C. Tommy de Tombadorret", "D. Fred"},
-                                {"A. Torpedo", "B. Hond", "C. Kat", "D. Cocker Spaniel"},
-                                {"A. C", "B. Python", "C. C++", "D. Java"},
-                                {"A. Vorig jaar", "B. Mamma's verjaardag", "C. Nooit", "D. Volgend jaar"},
-                                {"A. 50", "B. 48", "C. 55", "D. 80"}};
+    std::string keuzes[][4] = {{"A. Hond",       "B. Rat",                "C. Tommy de Tombadorret", "D. Fred"},
+                               {"A. Torpedo",    "B. Hond",               "C. Kat",                  "D. Cocker Spaniel"},
+                               {"A. C",          "B. Python",             "C. C++",                  "D. Java"},
+                               {"A. Vorig jaar", "B. Mamma's verjaardag", "C. Nooit",                "D. Volgend jaar"},
+                               {"A. 50",         "B. 48",                 "C. 55",                   "D. 80"}};
 
     char antwoorden[] = {'C', 'D', 'C', 'B', 'A'};
 
@@ -29,9 +29,11 @@ int main(){
              std::cout << keuzes[i][j] << "\n";
                 }
 
-        std::cin >> gok;
+        gok = std::cin.get();               // get one character
+        std::cin.ignore(1, '\n');  // ignore until enter
+        std::cout << gok << '\n';
         gok = toupper(gok);
-        
+
 
         if(gok == antwoorden[i]){
             std::cout << "CORRECT!";
